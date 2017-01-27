@@ -32,7 +32,7 @@ This is the place you would like to use the state-logger:
 
 ```go
 var c Connection
-sl := NewStateLogger("connection", log.Printf, log.Printf, time.Minute)
+sl := NewStateLogger("connection", log.Printf)
 for {
     c, err = connect()
     if err == nil {

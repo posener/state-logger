@@ -1,10 +1,9 @@
 package logger
 
 import (
+	"errors"
 	"log"
 	"os"
-	"errors"
-	"time"
 )
 
 // ExampleStateLoggerWhy shows an example for a logging that you want to
@@ -39,7 +38,7 @@ func ExampleStateLoggerHow() {
 	// You could use the state logger for this:
 
 	do := fail4times()
-	sl := NewStateLogger("do state", l.Printf, l.Printf, time.Minute)
+	sl := NewStateLogger("do state", l.Printf)
 
 	for {
 		err := do()
@@ -58,7 +57,7 @@ func ExampleStateLoggerHow() {
 }
 
 // fail4times returns a function that fails the 4 first time it was called
-func fail4times() (func() error) {
+func fail4times() func() error {
 	i := 0
 	return func() error {
 		if i >= 4 {
@@ -68,4 +67,3 @@ func fail4times() (func() error) {
 		return errors.New("fails")
 	}
 }
-
