@@ -1,7 +1,8 @@
-package logger
+package logger_test
 
 import (
 	"errors"
+	"github.com/posener/state-logger"
 	"log"
 	"os"
 )
@@ -38,7 +39,7 @@ func ExampleStateLoggerHow() {
 	// You could use the state logger for this:
 
 	do := fail4times()
-	sl := NewStateLogger("do state", l.Printf)
+	sl := logger.NewStateLogger("do state", l.Printf)
 
 	for {
 		err := do()

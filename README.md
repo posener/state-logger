@@ -5,12 +5,15 @@
 
 A package used to log state changes.
 
-Supports:
+## Features
+
 * Log using your favorite log library
 * Set log interval
 * Different log levels for errors and for success
 
 ## Usage
+
+See [examples](./example_test.go).
 
 Sometimes you may have a function that fails.
 The code below shows a loop that tries to connect
@@ -34,8 +37,10 @@ This makes them ugly, and also harder to debug.
 This is the place you would like to use the state-logger:
 
 ```go
+import "github.com/posener/state-logger"
+
 var c Connection
-sl := NewStateLogger("connection", log.Printf)
+sl := logger.NewStateLogger("connection", log.Printf)
 for {
     c, err = connect()
     if err == nil {
