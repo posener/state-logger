@@ -1,6 +1,7 @@
 # state-logger
 
 [![Build Status](https://travis-ci.org/posener/state-logger.svg?branch=master)](https://travis-ci.org/posener/state-logger)
+[![codecov](https://codecov.io/gh/posener/state-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/posener/state-logger)
 
 A package used to log state changes.
 
